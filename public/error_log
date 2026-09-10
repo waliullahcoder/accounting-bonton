@@ -1,0 +1,477 @@
+[24-Oct-2023 23:34:40 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/dompdf/dompdf/src/Frame/FrameTree.php on line 242
+[24-Oct-2023 23:34:49 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/dompdf/dompdf/src/Frame.php on line 184
+[26-Oct-2023 07:12:22 UTC] PHP Warning:  require(/home/bontonfo/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:12:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bontonfo/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bontonfo/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:53:52 UTC] PHP Warning:  require(/home/bontonfo/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:53:52 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bontonfo/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bontonfo/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:56:41 UTC] PHP Warning:  require(/home/bontonfo/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:56:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bontonfo/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bontonfo/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:59:05 UTC] PHP Warning:  require(/home/bontonfo/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 07:59:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bontonfo/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bontonfo/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/bontonfo/public_html/public/index.php on line 34
+[26-Oct-2023 16:21:34 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/dompdf/dompdf/src/Frame/FrameTree.php on line 242
+[26-Oct-2023 16:21:56 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16777248 bytes) in /home/bontonfo/public_html/vendor/maennchen/zipstream-php/src/File.php on line 332
+[30-Oct-2023 13:06:54 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 13:06:54 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 13:07:25 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 13:07:55 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 13:49:50 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 13:50:32 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 13:52:25 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 14:15:03 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 14:19:38 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 14:33:54 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:26:16 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:27:15 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:27:49 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:30:36 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:32:42 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:33:43 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:36:04 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[30-Oct-2023 16:48:48 Asia/Dhaka] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bontonfo/public_html/vendor/symfony/polyfill-mbstring/Mbstring.php on line 660
+[31-Oct-2023 10:11:44 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/dompdf/dompdf/src/Frame/FrameTree.php on line 242
+[01-Nov-2023 23:28:31 Asia/Dhaka] PHP Fatal error:  Cannot declare class App\DataTables\ReturnSummaryDataTable, because the name is already in use in /home/bontonfo/public_html/app/DataTables/ReturnHistoryDataTable.php on line 14
+[01-Nov-2023 23:28:32 Asia/Dhaka] PHP Fatal error:  Cannot declare class App\DataTables\ReturnSummaryDataTable, because the name is already in use in /home/bontonfo/public_html/app/DataTables/ReturnHistoryDataTable.php on line 14
+[01-Nov-2023 23:28:33 Asia/Dhaka] PHP Fatal error:  Cannot declare class App\DataTables\ReturnSummaryDataTable, because the name is already in use in /home/bontonfo/public_html/app/DataTables/ReturnHistoryDataTable.php on line 14
+[02-Nov-2023 10:05:08 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/barryvdh/laravel-debugbar/src/DataCollector/QueryCollector.php on line 285
+[02-Nov-2023 10:05:38 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/barryvdh/laravel-debugbar/src/DataCollector/QueryCollector.php on line 285
+[02-Nov-2023 10:06:03 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/barryvdh/laravel-debugbar/src/DataCollector/QueryCollector.php on line 367
+[02-Nov-2023 10:07:27 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1720320 bytes) in /home/bontonfo/public_html/storage/framework/views/40b1983fc3e53f85c4ce139c16b73416.php on line 57
+[02-Nov-2023 10:07:59 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/barryvdh/laravel-debugbar/src/DataCollector/QueryCollector.php on line 267
+[07-Nov-2023 13:35:00 Asia/Dhaka] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/bontonfo/public_html/storage/framework/views/f2992b8b9e94b0883cbecccc6d29fcfb.php on line 56
+[07-Nov-2023 13:35:51 Asia/Dhaka] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/bontonfo/public_html/storage/framework/views/f2992b8b9e94b0883cbecccc6d29fcfb.php on line 56
+[08-Nov-2023 14:00:18 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/dompdf/dompdf/src/Frame.php on line 184
+[08-Nov-2023 14:00:43 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16777248 bytes) in /home/bontonfo/public_html/vendor/maennchen/zipstream-php/src/File.php on line 332
+[08-Nov-2023 14:02:54 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16777248 bytes) in /home/bontonfo/public_html/vendor/maennchen/zipstream-php/src/File.php on line 332
+[08-Nov-2023 14:08:44 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16777248 bytes) in /home/bontonfo/public_html/vendor/maennchen/zipstream-php/src/File.php on line 332
+[08-Nov-2023 14:26:19 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16777248 bytes) in /home/bontonfo/public_html/vendor/maennchen/zipstream-php/src/File.php on line 332
+[08-Nov-2023 14:42:43 Asia/Dhaka] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bontonfo/public_html/vendor/dompdf/dompdf/src/Frame/FrameTree.php on line 242
+[07-Oct-2024 14:51:15 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:19 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:22 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:35 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:51:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:03 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:05 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:16 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:29 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:32 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:40 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:42 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:45 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:55 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:52:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:09 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:12 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:12 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:13 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:53:13 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:54:34 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:54:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:54:36 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:54:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:54:48 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:54:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:10 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:50 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:52 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:52 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:55 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:57 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:55:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:56:12 UTC] PHP Warning:  require_once(/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php): Failed to open stream: No such file or directory in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[07-Oct-2024 14:56:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rexschoo/asifkhandaker.com/public/../bootstrap/app.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rexschoo/asifkhandaker.com/public/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/rexschoo/asifkhandaker.com/public/index.php on line 47
+[14-Oct-2024 04:47:24 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /home/rexschoo/app.hayaskitchenbd.com/vendor/composer/platform_check.php on line 28
+[14-Oct-2024 04:49:07 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:49:11 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:49:23 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:49:29 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:49:46 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/rexschoo/app.hayaskitchenbd.com/vendor/composer/platform_check.php on line 28
+[14-Oct-2024 04:49:59 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:50:26 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:50:30 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:51:27 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:52:33 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:52:39 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:52:55 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:53:25 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:54:33 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:54:48 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:55:20 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:55:35 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:56:01 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 04:58:57 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 05:03:28 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 05:05:33 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 05:06:13 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352
+[14-Oct-2024 05:06:14 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:352
+Stack trace:
+#0 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(744): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(719): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(509): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(148): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/rexschoo/app.hayaskitchenbd.com/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/rexschoo/app.hayaskitchenbd.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 352

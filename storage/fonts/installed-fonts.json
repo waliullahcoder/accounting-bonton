@@ -1,0 +1,11 @@
+{
+    "pt serif": {
+        "italic": "E:\\laragon\\www\\accounting-bonton\\storage\\fonts\/pt_serif_italic_f9b6598cf7d0419a014cfb138cca32d8",
+        "bold_italic": "E:\\laragon\\www\\accounting-bonton\\storage\\fonts\/pt_serif_bold_italic_a5b4d598a1a99da44e2320dde5f663d5",
+        "normal": "pt_serif_normal_b504b7d2db909ef4d76100e1ec28b578",
+        "bold": "E:\\laragon\\www\\accounting-bonton\\storage\\fonts\/pt_serif_bold_23708553f1de70cacb300fe34d5b01eb"
+    },
+    "glyphicons halflings": {
+        "normal": "glyphicons_halflings_normal_5eb770d49f33dc5cbd8e4ba1244adab4"
+    }
+}

@@ -1,0 +1,129 @@
+.h1,
+h1 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.h2,
+h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.h3,
+h3 {
+    font-size: 14px;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.content-table th {
+    vertical-align: top !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* body {
+    -webkit-print-color-adjust: exact;
+} */
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+}
+
+.chalan_wrapper {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 10mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-top {
+    text-align: center;
+    position: relative;
+}
+
+.musok {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border: 2px solid #444;
+    padding: 5px 10px 6px;
+    line-height: 1;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.label-wrapper {
+    overflow: hidden;
+}
+
+.header-label {
+    width: 180px;
+    display: block;
+    float: left;
+}
+
+.mb-1 {
+    margin-bottom: 5px;
+}
+
+.label-val {
+    font-size: 13px;
+}
+
+.header-middle {
+    margin-bottom: 10px;
+}
+
+.header-bottom table {
+    width: 100%;
+}
+
+.content-table {
+    font-size: 12px;
+}
+
+.content-table td,
+.content-table th {
+    border-color: #444 !important;
+    border-width: 2px !important;
+    border-top: 2px solid #444 !important;
+}
+
+.table-borderless tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: none !important;
+    padding: 3px 0 !important;
+    vertical-align: middle !important;
+    display: flex;
+}
+
+.table-borderless td b {
+    display: inline-block;
+    width: 150px;
+}
+
+.table-borderless td:nth-child(2) b {
+    width: 85px;
+}
