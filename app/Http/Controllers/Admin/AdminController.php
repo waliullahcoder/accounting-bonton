@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\HelperClass;
 use App\Models\User;
+use App\Models\AccountTransaction;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -44,8 +46,73 @@ class AdminController extends Controller
 
     public function dashboard(Request $request)
     {
-        return view('admin.profile.dashbaord');
+
+     $year = $request->get('year', now()->year);
+
+        $transactions = AccountTransaction::query()
+            ->whereYear('voucher_date', $year)
+            ->whereIn('voucher_type', ['CV', 'DV'])
+            ->selectRaw('
+                MONTH(voucher_date) as month,
+                voucher_type,
+                SUM(debit_amount) as total_debit,
+                SUM(credit_amount) as total_credit
+            ')
+            ->groupBy(
+                'month',
+                'voucher_type'
+            )
+            ->orderBy('month')
+            ->get();
+
+        $months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+
+        $income = array_fill(0, 12, 0);
+        $expense = array_fill(0, 12, 0);
+
+        foreach ($transactions as $transaction) {
+
+            $index = $transaction->month - 1;
+
+            // CV = Income
+            if ($transaction->voucher_type === 'CV') {
+                $income[$index] += (float) $transaction->total_credit;
+            }
+
+            // DV = Expense
+            if ($transaction->voucher_type === 'DV') {
+                $expense[$index] += (float) $transaction->total_debit;
+            }
+        }
+
+        $totalIncome = array_sum($income);
+        $totalExpense = array_sum($expense);
+        $netBalance = $totalIncome - $totalExpense;
+
+        return view('admin.profile.dashbaord', compact(
+            'year',
+            'months',
+            'income',
+            'expense',
+            'totalIncome',
+            'totalExpense',
+            'netBalance'
+        ));
     }
+
 
     /**
      * Manage Sidebar

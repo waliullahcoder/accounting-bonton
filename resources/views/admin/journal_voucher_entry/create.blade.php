@@ -21,6 +21,17 @@
                 placeholder="Transaction Date" required>
         </div>
         <div class="col-lg-4 col-sm-6">
+            <label for="coa_heads" class="form-label"><b>Cost Center <span class="text-danger">*</span></b></label>
+            <select name="coa_heads" id="coa_heads" class="form-select select" data-placeholder="select Cost Center">
+                <option value="">Select Cost Center</option>
+                @foreach ($coas as $item)
+                    <option value="{{ $item->id }}" data-name="{{ $item->head_name }}"
+                        data-code="{{ $item->head_code }}">{{ $item->head_name }} -
+                        {{ $item->head_code }}</option>
+                @endforeach
+            </select>
+        </div>
+         <!-- <div class="col-lg-4 col-sm-6">
             <label for="coa_heads" class="form-label"><b>Account Head <span class="text-danger">*</span></b></label>
             <select name="coa_heads" id="coa_heads" class="form-select select" data-placeholder="select Account Head">
                 <option value="">Select Account Name</option>
@@ -30,7 +41,7 @@
                         {{ $item->head_code }}</option>
                 @endforeach
             </select>
-        </div>
+        </div> -->
         <div class="col-lg-4 col-sm-4">
             <label for="narration" class="form-label"><b>Remarks</b></label>
             <textarea class="form-control narration" id="narration" name="narration" rows="1" spellcheck="false"
