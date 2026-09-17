@@ -491,16 +491,21 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const ctx = document
-        .getElementById('monthlyIncomeExpenseChart')
-        .getContext('2d');
+    const canvas = document.getElementById('monthlyIncomeExpenseChart');
 
+    if (!canvas) {
+        return;
+    }
+
+    const ctx = canvas.getContext('2d');
 
     const months = @json($months);
 
     const incomeData = @json($income);
 
     const expenseData = @json($expense);
+
+    const selectedYear = {{ $year }};
 
 
     new Chart(ctx, {
@@ -564,16 +569,109 @@ document.addEventListener('DOMContentLoaded', function () {
 
             maintainAspectRatio: false,
 
-            interaction: {
-                mode: 'index',
-                intersect: false
+
+            /*
+            |--------------------------------------------------------------------------
+            | Bar Click
+            |--------------------------------------------------------------------------
+            */
+
+            onClick: function (event, elements) {
+
+                if (!elements.length) {
+                    return;
+                }
+
+                // কোন মাসের bar click হয়েছে
+                const monthIndex = elements[0].index;
+
+                // 01 - 12
+                const monthNumber = String(monthIndex + 1)
+                    .padStart(2, '0');
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | First Date
+                |--------------------------------------------------------------------------
+                */
+
+                const startDate =
+                    `01-${monthNumber}-${selectedYear}`;
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Last Date
+                |--------------------------------------------------------------------------
+                */
+
+                const lastDay =
+                    new Date(
+                        selectedYear,
+                        monthIndex + 1,
+                        0
+                    ).getDate();
+
+
+                const endDate =
+                    `${String(lastDay).padStart(2, '0')}-${monthNumber}-${selectedYear}`;
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Income Statement URL
+                |--------------------------------------------------------------------------
+                */
+
+                const url =
+                    `{{ route('admin.income-statement.index') }}` +
+                    `?print=&filter=1&project_id=` +
+                    `&date_range=${encodeURIComponent(startDate + ' to ' + endDate)}`;
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Go To Report
+                |--------------------------------------------------------------------------
+                */
+
+                window.location.href = url;
+
             },
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | Cursor Pointer
+            |--------------------------------------------------------------------------
+            */
+
+            onHover: function (event, elements) {
+
+                event.native.target.style.cursor =
+                    elements.length ? 'pointer' : 'default';
+
+            },
+
+
+            interaction: {
+
+                mode: 'index',
+
+                intersect: false
+
+            },
+
 
             plugins: {
 
                 legend: {
+
                     display: false
+
                 },
+
 
                 tooltip: {
 
@@ -582,26 +680,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     padding: 12,
 
                     titleFont: {
+
                         size: 14,
+
                         weight: '600'
+
                     },
 
                     bodyFont: {
+
                         size: 13
+
                     },
+
 
                     callbacks: {
 
-                        label: function(context) {
+                        label: function (context) {
 
                             let value = context.raw || 0;
 
                             return context.dataset.label
                                 + ': '
                                 + value.toLocaleString(undefined, {
+
                                     minimumFractionDigits: 2,
+
                                     maximumFractionDigits: 2
+
                                 });
+
                         }
 
                     }
@@ -616,14 +724,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 x: {
 
                     grid: {
+
                         display: false
+
                     },
 
                     ticks: {
+
                         color: '#7b8190',
+
                         font: {
+
                             size: 12
+
                         }
+
                     }
 
                 },
@@ -634,14 +749,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     beginAtZero: true,
 
                     grid: {
+
                         color: 'rgba(0, 0, 0, 0.05)'
+
                     },
 
                     ticks: {
 
                         color: '#7b8190',
 
-                        callback: function(value) {
+                        callback: function (value) {
 
                             return Number(value).toLocaleString();
 
