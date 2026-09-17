@@ -246,7 +246,7 @@ $currentMonthExpenseHeads = AccountTransaction::with('coa')
 $currentMonthPieData = $currentMonthIncomeHeads
     ->concat($currentMonthExpenseHeads)
     ->values();
-
+//dd($currentMonthIncomeHeads,$currentMonthExpenseHeads);
         return view('admin.profile.dashbaord', compact(
             'months',
             'income',

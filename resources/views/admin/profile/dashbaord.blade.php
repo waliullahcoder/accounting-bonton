@@ -367,11 +367,12 @@
     text-decoration: line-through;
 }
 </style>
+   
 <div class="container-fluid dashboard-wrapper">
 
-    {{-- =========================
+    {{-- =========================================================
         SUMMARY CARDS
-    ========================== --}}
+    ========================================================== --}}
     <div class="row g-4 mb-4">
 
         {{-- Total Income --}}
@@ -433,50 +434,89 @@
             </div>
         </div>
 
-        {{-- =========================
-        MONTHLY INCOME & EXPENSE
-    ========================== --}}
-        <div class="card border-0 shadow-sm">
+    </div>
 
-    {{-- Last 12 Months --}}
+
+    {{-- =========================================================
+        LAST 12 MONTHS INCOME & EXPENSE BAR CHART
+    ========================================================== --}}
+    <div class="card border-0 shadow-sm mb-4">
+
+        {{-- Header --}}
+        <div class="card-header bg-white border-0 py-3">
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+                <div>
+                    <h5 class="mb-1 fw-bold">
+                        Income & Expense
+                    </h5>
+
+                    <small class="text-muted">
+                        Last 12 Months
+                    </small>
+                </div>
+
+
+                {{-- Chart Legend --}}
+                <div class="legend-box">
+
+                    <div class="legend-item chart-legend-item"
+                         data-chart="monthly"
+                         data-dataset="0"
+                         id="incomeLegend">
+
+                        <span class="legend-dot income-dot"></span>
+                        Income
+
+                    </div>
+
+
+                    <div class="legend-item chart-legend-item"
+                         data-chart="monthly"
+                         data-dataset="1"
+                         id="expenseLegend">
+
+                        <span class="legend-dot expense-dot"></span>
+                        Expense
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {{-- Chart Body --}}
+        <div class="card-body">
+
+            <div style="position: relative; height: 350px; width: 100%;">
+                <canvas id="monthlyIncomeExpenseChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+   {{-- =========================================================
+    CURRENT MONTH INCOME & EXPENSE DETAILS
+========================================================= --}}
+<div class="card border-0 shadow-sm mb-4">
+
     <div class="card-header bg-white border-0 py-3">
 
-        <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-1 fw-bold">
+                Monthly Income & Expense
+            </h5>
 
-            <div>
-                <h5 class="mb-1 fw-bold">
-                    Income & Expense
-                </h5>
-
-                <small class="text-muted">
-                    Last 12 Months
-                </small>
-            </div>
-
-            <div class="legend-box">
-
-                <div class="legend-item chart-legend-item"
-                     data-chart="monthly"
-                     data-dataset="0"
-                     id="incomeLegend">
-
-                    <span class="legend-dot income-dot"></span>
-                    Income
-
-                </div>
-
-                <div class="legend-item chart-legend-item"
-                     data-chart="monthly"
-                     data-dataset="1"
-                     id="expenseLegend">
-
-                    <span class="legend-dot expense-dot"></span>
-                    Expense
-
-                </div>
-
-            </div>
-
+            <h6 class="text-success">
+                {{ now()->format('F Y') }}
+         </h6>
         </div>
 
     </div>
@@ -484,26 +524,219 @@
 
     <div class="card-body">
 
-        <div style="height: 350px;">
-            <canvas id="monthlyIncomeExpenseChart"></canvas>
-        </div>
+        <div class="row g-4">
 
-    </div>
+            {{-- =========================
+                INCOME
+            ========================== --}}
+            <div class="col-lg-6">
+
+                @php
+                    $reportIncomeTotal = 0;
+                @endphp
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-sm mb-0">
+
+                        <thead>
+
+                            <tr class="bg-primary text-white">
+                                <th colspan="2" class="text-center">
+                                    Income
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>Head Name</th>
+                                <th class="text-end">Balance</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @forelse (json_decode($currentMonthIncomeHeads) as $incomeHead)
+
+                                @php
+                                    $incomeAmount = (float) ($incomeHead->amount ?? 0);
+                                    $reportIncomeTotal += $incomeAmount;
+                                @endphp
+
+                                <tr>
+
+                                    <td>
+                                        {{ $incomeHead->name ?? $incomeHead->code ?? 'N/A' }}
+                                    </td>
+
+                                    <td class="text-end">
+                                        {{ number_format($incomeAmount, 2, '.', ',') }}
+                                    </td>
+
+                                </tr>
+
+                            @empty
+
+                                <tr>
+                                    <td colspan="2"
+                                        class="text-center text-muted py-3">
+                                        No Income Found
+                                    </td>
+                                </tr>
+
+                            @endforelse
+
+                        </tbody>
+
+                        <tfoot>
+
+                            <tr>
+
+                                <th class="text-end">
+                                    Total
+                                </th>
+
+                                <th class="text-end">
+                                    {{ number_format($reportIncomeTotal, 2, '.', ',') }}
+                                </th>
+
+                            </tr>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+
+            </div>
 
 
-    {{-- Current Month --}}
-<div class="card-header bg-white border-0 py-3 mt-3">
+            {{-- =========================
+                EXPENSE
+            ========================== --}}
+            <div class="col-lg-6">
 
-    <div class="d-flex justify-content-between align-items-center">
+                @php
+                    $reportExpenseTotal = 0;
+                @endphp
 
-        <div>
-            <h5 class="mb-1 fw-bold">
-                Current Month
-            </h5>
+                <div class="table-responsive">
 
-            <small class="text-muted">
-                {{ now()->format('F Y') }}
-            </small>
+                    <table class="table table-bordered table-sm mb-0">
+
+                        <thead>
+
+                            <tr class="bg-primary text-white">
+                                <th colspan="2" class="text-center">
+                                    Expense
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>Head Name</th>
+                                <th class="text-end">Balance</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            @forelse (json_decode($currentMonthExpenseHeads) as $expenseHead)
+
+                                @php
+                                    $expenseAmount = (float) ($expenseHead->amount ?? 0);
+                                    $reportExpenseTotal += $expenseAmount;
+                                @endphp
+
+                                <tr>
+
+                                    <td>
+                                        {{ $expenseHead->name ?? $expenseHead->code ?? 'N/A' }}
+                                    </td>
+
+                                    <td class="text-end">
+                                        {{ number_format($expenseAmount, 2, '.', ',') }}
+                                    </td>
+
+                                </tr>
+
+                            @empty
+
+                                <tr>
+                                    <td colspan="2"
+                                        class="text-center text-muted py-3">
+                                        No Expense Found
+                                    </td>
+                                </tr>
+
+                            @endforelse
+
+                        </tbody>
+
+                        <tfoot>
+
+                            <tr>
+
+                                <th class="text-end">
+                                    Total
+                                </th>
+
+                                <th class="text-end">
+                                    {{ number_format($reportExpenseTotal, 2, '.', ',') }}
+                                </th>
+
+                            </tr>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            {{-- =========================
+                NET RESULT
+            ========================== --}}
+            <div class="col-12">
+
+                @if ($reportIncomeTotal > $reportExpenseTotal)
+
+                    <div class="bg-success text-white text-center py-2 rounded">
+
+                        <strong>
+                            Net Profit:
+                            {{ number_format($reportIncomeTotal - $reportExpenseTotal, 2, '.', ',') }}
+                        </strong>
+
+                    </div>
+
+                @elseif ($reportIncomeTotal < $reportExpenseTotal)
+
+                    <div class="bg-danger text-white text-center py-2 rounded">
+
+                        <strong>
+                            Net Loss:
+                            {{ number_format($reportExpenseTotal - $reportIncomeTotal, 2, '.', ',') }}
+                        </strong>
+
+                    </div>
+
+                @else
+
+                    <div class="bg-secondary text-white text-center py-2 rounded">
+
+                        <strong>
+                            Net Balance: 0.00
+                        </strong>
+
+                    </div>
+
+                @endif
+
+            </div>
+
         </div>
 
     </div>
@@ -511,34 +744,60 @@
 </div>
 
 
-<div class="card-body">
+    {{-- =========================================================
+        CURRENT MONTH PIE CHART
+    ========================================================== --}}
+    <!-- <div class="card border-0 shadow-sm mb-4"> -->
 
-    <div class="row">
+        {{-- Header --}}
+        <!-- <div class="card-header bg-white border-0 py-3">
 
-        {{-- Chart --}}
-        <div class="col-lg-7">
+            <div class="d-flex justify-content-between align-items-center">
 
-            <div style="height: 300px;">
-                <canvas id="currentMonthIncomeExpenseChart"></canvas>
+                <div>
+                    <h5 class="mb-1 fw-bold">
+                         Monthly Pie Chart
+                    </h5>
+
+                    <small class="text-muted">
+                        {{ now()->format('F Y') }}
+                    </small>
+                </div>
+
+            </div>
+
+        </div> -->
+
+
+        {{-- Chart Body --}}
+        <!-- <div class="card-body">
+
+            <div class="row align-items-center">
+
+                {{-- Pie Chart --}}
+                <div class="col-lg-7">
+
+                    <div style="position: relative; height: 300px; width: 100%;">
+                        <canvas id="currentMonthIncomeExpenseChart"></canvas>
+                    </div>
+
+                </div>
+
+
+                {{-- Legend --}}
+                <div class="col-lg-5">
+
+                    <div id="currentMonthChartLegend"
+                         class="current-month-legend">
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-
-        {{-- Legend --}}
-        <div class="col-lg-5">
-
-            <div id="currentMonthChartLegend"
-                 class="current-month-legend">
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-    </div>
+    </div> -->
 
 
     
