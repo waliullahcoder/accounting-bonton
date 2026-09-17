@@ -47,78 +47,154 @@ class AdminController extends Controller
    public function dashboard(Request $request)
     {
 
-     $year = $request->get('year', now()->year);
+    $year = $request->get('year', now()->year);
+        /*
+        |--------------------------------------------------------------------------
+        | Last 12 Months
+        |--------------------------------------------------------------------------
+        */
 
-	$transactions = AccountTransaction::query()
-	    ->withoutGlobalScopes() // ❗ disable all scopes first
-	
-	    ->join('coa_setups', function ($join) {
-	        $join->on('coa_setups.id', '=', 'account_transactions.coa_setup_id')
-	             ->whereNull('coa_setups.deleted_at');
-	    })
-	
-	    ->whereYear('account_transactions.voucher_date', $year)
-	
-	    // ✅ apply company filter ONLY once (explicit)
-	    // ->where('account_transactions.company_id', auth()->user()->company_id)
-	    ->whereNull('account_transactions.deleted_at')
-	
-	    ->selectRaw('
-	        MONTH(account_transactions.voucher_date) as month,
-	
-	        SUM(CASE 
-	            WHEN coa_setups.head_type = "I" 
-	            THEN account_transactions.credit_amount 
-	            ELSE 0 
-	        END) as total_income,
-	
-	        SUM(CASE 
-	            WHEN coa_setups.head_type = "E" 
-	            THEN account_transactions.debit_amount 
-	            ELSE 0 
-	        END) as total_expense
-	    ')
-	    ->groupByRaw('MONTH(account_transactions.voucher_date)')
-	    ->orderByRaw('MONTH(account_transactions.voucher_date)')
-	    ->get();
-		
-        $months = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December'
-        ];
+        $startDate = now()->startOfMonth()->subMonths(11);
+        $endDate   = now()->endOfMonth();
 
-		$income = array_fill(0, 12, 0);
-		$expense = array_fill(0, 12, 0);
-		
-		foreach ($transactions as $t) {
-		    $index = $t->month - 1;
-		
-		    $income[$index] = (float) $t->total_income;
-		    $expense[$index] = (float) $t->total_expense;
-		}
 
-        $totalIncome = array_sum($income);
+        /*
+        |--------------------------------------------------------------------------
+        | Last 12 Months Income / Expense
+        |--------------------------------------------------------------------------
+        */
+
+        $transactions = AccountTransaction::query()
+            ->withoutGlobalScopes()
+
+            ->join('coa_setups', function ($join) {
+                $join->on(
+                    'coa_setups.id',
+                    '=',
+                    'account_transactions.coa_setup_id'
+                )
+                ->whereNull('coa_setups.deleted_at');
+            })
+
+            ->whereBetween(
+                'account_transactions.voucher_date',
+                [
+                    $startDate->toDateString(),
+                    $endDate->toDateString()
+                ]
+            )
+
+            ->whereNull('account_transactions.deleted_at')
+
+            ->selectRaw('
+                YEAR(account_transactions.voucher_date) as year,
+                MONTH(account_transactions.voucher_date) as month,
+
+                SUM(
+                    CASE
+                        WHEN coa_setups.head_type = "I"
+                        THEN account_transactions.credit_amount
+                        ELSE 0
+                    END
+                ) as total_income,
+
+                SUM(
+                    CASE
+                        WHEN coa_setups.head_type = "E"
+                        THEN account_transactions.debit_amount
+                        ELSE 0
+                    END
+                ) as total_expense
+            ')
+
+            ->groupByRaw('
+                YEAR(account_transactions.voucher_date),
+                MONTH(account_transactions.voucher_date)
+            ')
+
+            ->orderByRaw('
+                YEAR(account_transactions.voucher_date),
+                MONTH(account_transactions.voucher_date)
+            ')
+
+            ->get();
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Prepare Last 12 Months Data
+        |--------------------------------------------------------------------------
+        */
+
+        $months = [];
+        $income = [];
+        $expense = [];
+
+        for ($i = 11; $i >= 0; $i--) {
+
+            $date = now()->startOfMonth()->subMonths($i);
+
+            $key = $date->year . '-' . $date->month;
+
+            $transaction = $transactions->first(function ($item) use ($date) {
+                return (int) $item->year === (int) $date->year
+                    && (int) $item->month === (int) $date->month;
+            });
+
+            $months[] = $date->format('M Y');
+
+            $income[] = $transaction
+                ? (float) $transaction->total_income
+                : 0;
+
+            $expense[] = $transaction
+                ? (float) $transaction->total_expense
+                : 0;
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Total
+        |--------------------------------------------------------------------------
+        */
+
+        $totalIncome  = array_sum($income);
         $totalExpense = array_sum($expense);
+
         $netBalance = $totalIncome - $totalExpense;
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Current Month
+        |--------------------------------------------------------------------------
+        */
+
+        $currentMonthTransaction = $transactions->first(function ($item) {
+            return (int) $item->year === now()->year
+                && (int) $item->month === now()->month;
+        });
+
+        $currentMonthIncome = $currentMonthTransaction
+            ? (float) $currentMonthTransaction->total_income
+            : 0;
+
+        $currentMonthExpense = $currentMonthTransaction
+            ? (float) $currentMonthTransaction->total_expense
+            : 0;
+
+
         return view('admin.profile.dashbaord', compact(
-            'year',
             'months',
             'income',
+            'year',
             'expense',
             'totalIncome',
             'totalExpense',
-            'netBalance'
+            'netBalance',
+            'currentMonthIncome',
+            'currentMonthExpense'
         ));
     }
 

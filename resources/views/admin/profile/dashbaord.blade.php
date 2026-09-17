@@ -2,31 +2,52 @@
 
 @section('content')
 <style>
-    .dashboard-wrapper {
-        padding: 12px 0 25px;
-        background: #f6f8fc;
-    }
 
-    /* =========================
+.chart-legend-item,
+.current-chart-legend {
+    cursor: pointer;
+    user-select: none;
+    transition: all .2s ease;
+}
+
+.chart-legend-item:hover,
+.current-chart-legend:hover {
+    opacity: .7;
+}
+
+.chart-legend-item.legend-hidden,
+.current-chart-legend.legend-hidden {
+    opacity: .35;
+    text-decoration: line-through;
+}
+
+</style>
+<style>
+.dashboard-wrapper {
+    padding: 12px 0 25px;
+    background: #f6f8fc;
+}
+
+/* =========================
        SUMMARY CARDS
     ========================== */
 
-    .dashboard-card {
-        position: relative;
-        border: 1px solid rgba(226, 232, 240, .8);
-        border-radius: 18px;
-        background: #ffffff;
-        box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
-        overflow: hidden;
-        transition: all .3s ease;
-    }
+.dashboard-card {
+    position: relative;
+    border: 1px solid rgba(226, 232, 240, .8);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
+    overflow: hidden;
+    transition: all .3s ease;
+}
 
-    .dashboard-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 15px 35px rgba(15, 23, 42, .10);
-    }
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, .10);
+}
 
-   .summary-card {
+.summary-card {
     min-height: 145px;
     padding: 24px;
 
@@ -38,57 +59,51 @@
     text-align: center;
 }
 
-    .summary-card::after {
-        content: "";
-        position: absolute;
-        right: -35px;
-        bottom: -45px;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        opacity: .07;
-    }
+.summary-card::after {
+    content: "";
+    position: absolute;
+    right: -35px;
+    bottom: -45px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: .07;
+}
 
-    /* Income */
-    .summary-card.income-card {
-        background: linear-gradient(
-            135deg,
+/* Income */
+.summary-card.income-card {
+    background: linear-gradient(135deg,
             #ffffff 0%,
-            #f1fff8 100%
-        );
-    }
+            #f1fff8 100%);
+}
 
-    .income-card::after {
-        background: #10b981;
-    }
+.income-card::after {
+    background: #10b981;
+}
 
-    /* Expense */
-    .summary-card.expense-card {
-        background: linear-gradient(
-            135deg,
+/* Expense */
+.summary-card.expense-card {
+    background: linear-gradient(135deg,
             #ffffff 0%,
-            #fff5f5 100%
-        );
-    }
+            #fff5f5 100%);
+}
 
-    .expense-card::after {
-        background: #ef4444;
-    }
+.expense-card::after {
+    background: #ef4444;
+}
 
-    /* Balance */
-    .summary-card.balance-card {
-        background: linear-gradient(
-            135deg,
+/* Balance */
+.summary-card.balance-card {
+    background: linear-gradient(135deg,
             #ffffff 0%,
-            #f2f7ff 100%
-        );
-    }
+            #f2f7ff 100%);
+}
 
-    .balance-card::after {
-        background: #3b82f6;
-    }
+.balance-card::after {
+    background: #3b82f6;
+}
 
-    .summary-icon {
+.summary-icon {
     width: 54px;
     height: 54px;
     border-radius: 15px;
@@ -101,37 +116,31 @@
     margin-bottom: 12px;
 }
 
-    .income-icon {
-        background: linear-gradient(
-            135deg,
+.income-icon {
+    background: linear-gradient(135deg,
             #d1fae5,
-            #ecfdf5
-        );
-        color: #059669;
-        box-shadow: 0 6px 15px rgba(16, 185, 129, .15);
-    }
+            #ecfdf5);
+    color: #059669;
+    box-shadow: 0 6px 15px rgba(16, 185, 129, .15);
+}
 
-    .expense-icon {
-        background: linear-gradient(
-            135deg,
+.expense-icon {
+    background: linear-gradient(135deg,
             #fee2e2,
-            #fff1f2
-        );
-        color: #dc2626;
-        box-shadow: 0 6px 15px rgba(239, 68, 68, .15);
-    }
+            #fff1f2);
+    color: #dc2626;
+    box-shadow: 0 6px 15px rgba(239, 68, 68, .15);
+}
 
-    .balance-icon {
-        background: linear-gradient(
-            135deg,
+.balance-icon {
+    background: linear-gradient(135deg,
             #dbeafe,
-            #eff6ff
-        );
-        color: #2563eb;
-        box-shadow: 0 6px 15px rgba(59, 130, 246, .15);
-    }
+            #eff6ff);
+    color: #2563eb;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, .15);
+}
 
-   .summary-title {
+.summary-title {
     font-size: 13px;
     color: #64748b;
     margin-bottom: 5px;
@@ -139,7 +148,7 @@
     text-align: center;
 }
 
-   .summary-value {
+.summary-value {
     font-size: 27px;
     font-weight: 800;
     color: #0f172a;
@@ -147,200 +156,216 @@
     text-align: center;
 }
 
-    /* =========================
+/* =========================
        CHART CARD
     ========================== */
 
-    .chart-card {
-        border: 1px solid rgba(226, 232, 240, .85);
-        border-radius: 20px;
-        background: #ffffff;
-        box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
-        overflow: hidden;
-    }
+.chart-card {
+    border: 1px solid rgba(226, 232, 240, .85);
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
+    overflow: hidden;
+}
 
-    .chart-header {
-        padding: 24px 26px 15px;
+.chart-header {
+    padding: 24px 26px 15px;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        flex-wrap: wrap;
-        gap: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
 
-        border-bottom: 1px solid #f1f5f9;
-    }
+    border-bottom: 1px solid #f1f5f9;
+}
 
-    .chart-title {
-        margin: 0;
+.chart-title {
+    margin: 0;
 
-        font-size: 20px;
-        font-weight: 750;
+    font-size: 20px;
+    font-weight: 750;
 
-        color: #0f172a;
-        letter-spacing: -.3px;
-    }
+    color: #0f172a;
+    letter-spacing: -.3px;
+}
 
-    .chart-title i {
-        color: #2563eb;
-    }
+.chart-title i {
+    color: #2563eb;
+}
 
-    .chart-subtitle {
-        margin-top: 6px;
+.chart-subtitle {
+    margin-top: 6px;
 
-        color: #94a3b8;
-        font-size: 13px;
-        font-weight: 500;
-    }
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+}
 
-    /* =========================
+/* =========================
        LEGEND
     ========================== */
 
-    .legend-box {
-        display: flex;
-        gap: 18px;
-        align-items: center;
+.legend-box {
+    display: flex;
+    gap: 18px;
+    align-items: center;
 
-        font-size: 13px;
-        color: #64748b;
-        font-weight: 500;
-    }
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
 
-    .legend-item {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-    }
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
 
-    .legend-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        display: inline-block;
-    }
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
 
-    .income-dot {
-        background: #10b981;
-        box-shadow: 0 0 0 4px rgba(16, 185, 129, .10);
-    }
+.income-dot {
+    background: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, .10);
+}
 
-    .expense-dot {
-        background: #ef4444;
-        box-shadow: 0 0 0 4px rgba(239, 68, 68, .10);
-    }
+.expense-dot {
+    background: #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, .10);
+}
 
-    /* =========================
+/* =========================
        YEAR SELECT
     ========================== */
 
-    .year-select {
-        min-width: 100px;
+.year-select {
+    min-width: 100px;
 
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
 
-        padding: 9px 34px 9px 13px;
+    padding: 9px 34px 9px 13px;
 
-        background: #f8fafc;
+    background: #f8fafc;
 
-        color: #334155;
+    color: #334155;
 
-        font-size: 13px;
-        font-weight: 600;
+    font-size: 13px;
+    font-weight: 600;
 
-        outline: none;
+    outline: none;
 
-        cursor: pointer;
+    cursor: pointer;
 
-        transition: all .2s ease;
-    }
+    transition: all .2s ease;
+}
 
-    .year-select:hover {
-        border-color: #93c5fd;
-        background: #ffffff;
-    }
+.year-select:hover {
+    border-color: #93c5fd;
+    background: #ffffff;
+}
 
-    .year-select:focus {
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, .10);
-    }
+.year-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .10);
+}
 
-    /* =========================
+/* =========================
        CHART
     ========================== */
 
-    .chart-body {
-        padding: 18px 25px 28px;
-        height: 440px;
-        position: relative;
-    }
+.chart-body {
+    padding: 18px 25px 28px;
+    height: 440px;
+    position: relative;
+}
 
-    /* =========================
+/* =========================
        RESPONSIVE
     ========================== */
 
-    @media (max-width: 992px) {
+@media (max-width: 992px) {
 
-        .chart-header {
-            align-items: flex-start;
-        }
-
-        .chart-body {
-            height: 400px;
-        }
+    .chart-header {
+        align-items: flex-start;
     }
 
-    @media (max-width: 768px) {
+    .chart-body {
+        height: 400px;
+    }
+}
 
-        .dashboard-wrapper {
-            padding-left: 5px;
-            padding-right: 5px;
-        }
+@media (max-width: 768px) {
 
-        .summary-card {
-            min-height: 135px;
-            padding: 20px;
-        }
-
-        .summary-value {
-            font-size: 23px;
-        }
-
-        .chart-header {
-            padding: 20px 18px 14px;
-        }
-
-        .chart-body {
-            height: 350px;
-            padding: 12px 10px 20px;
-        }
-
-        .legend-box {
-            gap: 12px;
-        }
+    .dashboard-wrapper {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
-    @media (max-width: 576px) {
-
-        .chart-header {
-            display: block;
-        }
-
-        .chart-header > div:last-child {
-            margin-top: 15px;
-            justify-content: space-between;
-        }
-
-        .legend-box {
-            margin-bottom: 12px;
-        }
-
-        .chart-title {
-            font-size: 18px;
-        }
+    .summary-card {
+        min-height: 135px;
+        padding: 20px;
     }
+
+    .summary-value {
+        font-size: 23px;
+    }
+
+    .chart-header {
+        padding: 20px 18px 14px;
+    }
+
+    .chart-body {
+        height: 350px;
+        padding: 12px 10px 20px;
+    }
+
+    .legend-box {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .chart-header {
+        display: block;
+    }
+
+    .chart-header>div:last-child {
+        margin-top: 15px;
+        justify-content: space-between;
+    }
+
+    .legend-box {
+        margin-bottom: 12px;
+    }
+
+    .chart-title {
+        font-size: 18px;
+    }
+}
+
+
+.chart-legend-item {
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+.chart-legend-item:hover {
+    opacity: 0.7;
+}
+
+.chart-legend-item.legend-hidden {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
 </style>
 <div class="container-fluid dashboard-wrapper">
 
@@ -349,141 +374,183 @@
     ========================== --}}
     <div class="row g-4 mb-4">
 
-       {{-- Total Income --}}
-<div class="col-xl-4 col-md-6">
-    <div class="dashboard-card summary-card income-card">
+        {{-- Total Income --}}
+        <div class="col-xl-4 col-md-6">
+            <div class="dashboard-card summary-card income-card">
 
-        <div class="summary-icon income-icon">
-            <i class="fas fa-arrow-down"></i>
+                <div class="summary-icon income-icon">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+
+                <div class="summary-title">
+                    Total Income
+                </div>
+
+                <div class="summary-value">
+                    {{ number_format($totalIncome, 2) }}
+                </div>
+
+            </div>
         </div>
 
-        <div class="summary-title">
-            Total Income
+
+        {{-- Total Expense --}}
+        <div class="col-xl-4 col-md-6">
+            <div class="dashboard-card summary-card expense-card">
+
+                <div class="summary-icon expense-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+
+                <div class="summary-title">
+                    Total Expense
+                </div>
+
+                <div class="summary-value">
+                    {{ number_format($totalExpense, 2) }}
+                </div>
+
+            </div>
         </div>
 
-        <div class="summary-value">
-            {{ number_format($totalIncome, 2) }}
+
+        {{-- Net Balance --}}
+        <div class="col-xl-4 col-md-12">
+            <div class="dashboard-card summary-card balance-card">
+
+                <div class="summary-icon balance-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+
+                <div class="summary-title">
+                    Net Balance
+                </div>
+
+                <div class="summary-value">
+                    {{ number_format($netBalance, 2) }}
+                </div>
+
+            </div>
         </div>
 
-    </div>
-</div>
-
-
-{{-- Total Expense --}}
-<div class="col-xl-4 col-md-6">
-    <div class="dashboard-card summary-card expense-card">
-
-        <div class="summary-icon expense-icon">
-            <i class="fas fa-arrow-up"></i>
-        </div>
-
-        <div class="summary-title">
-            Total Expense
-        </div>
-
-        <div class="summary-value">
-            {{ number_format($totalExpense, 2) }}
-        </div>
-
-    </div>
-</div>
-
-
-{{-- Net Balance --}}
-<div class="col-xl-4 col-md-12">
-    <div class="dashboard-card summary-card balance-card">
-
-        <div class="summary-icon balance-icon">
-            <i class="fas fa-wallet"></i>
-        </div>
-
-        <div class="summary-title">
-            Net Balance
-        </div>
-
-        <div class="summary-value">
-            {{ number_format($netBalance, 2) }}
-        </div>
-
-    </div>
-</div>
-
-    {{-- =========================
+        {{-- =========================
         MONTHLY INCOME & EXPENSE
     ========================== --}}
-    <div class="chart-card">
+        <div class="card border-0 shadow-sm">
 
-        <div class="chart-header">
+    {{-- Last 12 Months --}}
+    <div class="card-header bg-white border-0 py-3">
+
+        <div class="d-flex justify-content-between align-items-center">
 
             <div>
-                <h4 class="chart-title">
-                    <i class="fas fa-chart-column me-2"></i>
-                    Monthly Income & Expense
-                </h4>
+                <h5 class="mb-1 fw-bold">
+                    Income & Expense
+                </h5>
 
-                <div class="chart-subtitle">
-                    Financial overview for {{ $year }}
-                </div>
+                <small class="text-muted">
+                    Last 12 Months
+                </small>
             </div>
 
+            <div class="legend-box">
 
-            <div class="d-flex align-items-center gap-3">
+                <div class="legend-item chart-legend-item"
+                     data-chart="monthly"
+                     data-dataset="0"
+                     id="incomeLegend">
 
-                <div class="legend-box">
-
-                    <div class="legend-item">
-                        <span class="legend-dot income-dot"></span>
-                        Income
-                    </div>
-
-                    <div class="legend-item">
-                        <span class="legend-dot expense-dot"></span>
-                        Expense
-                    </div>
+                    <span class="legend-dot income-dot"></span>
+                    Income
 
                 </div>
 
+                <div class="legend-item chart-legend-item"
+                     data-chart="monthly"
+                     data-dataset="1"
+                     id="expenseLegend">
 
-                <form method="GET" action="{{ route('admin.dashboard') }}">
+                    <span class="legend-dot expense-dot"></span>
+                    Expense
 
-                    <select
-                        name="year"
-                        class="year-select"
-                        onchange="this.form.submit()"
-                    >
-
-                        @for($i = now()->year - 4; $i <= now()->year; $i++)
-
-                            <option
-                                value="{{ $i }}"
-                                {{ $year == $i ? 'selected' : '' }}
-                            >
-                                {{ $i }}
-                            </option>
-
-                        @endfor
-
-                    </select>
-
-                </form>
+                </div>
 
             </div>
 
         </div>
 
+    </div>
 
-        <div class="chart-body">
+
+    <div class="card-body">
+
+        <div style="height: 350px;">
             <canvas id="monthlyIncomeExpenseChart"></canvas>
         </div>
 
     </div>
 
+
+    {{-- Current Month --}}
+    <div class="card-header bg-white border-0 py-3 mt-3">
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <h5 class="mb-1 fw-bold">
+                    Current Month
+                </h5>
+
+                <small class="text-muted">
+                    {{ now()->format('F Y') }}
+                </small>
+            </div>
+
+
+            <div class="legend-box">
+
+                <div class="legend-item current-chart-legend"
+                     data-dataset="0"
+                     id="currentIncomeLegend">
+
+                    <span class="legend-dot income-dot"></span>
+                    Income
+
+                </div>
+
+
+                <div class="legend-item current-chart-legend"
+                     data-dataset="1"
+                     id="currentExpenseLegend">
+
+                    <span class="legend-dot expense-dot"></span>
+                    Expense
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card-body">
+
+        <div style="height: 300px;">
+
+            <canvas id="currentMonthIncomeExpenseChart"></canvas>
+
+        </div>
+
+    </div>
+
 </div>
 
-@endsection
+        @endsection
 
 
-@push('js')
+     @push('js')
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
@@ -491,13 +558,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const canvas = document.getElementById('monthlyIncomeExpenseChart');
-
-    if (!canvas) {
-        return;
-    }
-
-    const ctx = canvas.getContext('2d');
+    /*
+    |--------------------------------------------------------------------------
+    | DATA
+    |--------------------------------------------------------------------------
+    */
 
     const months = @json($months);
 
@@ -505,237 +570,246 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const expenseData = @json($expense);
 
-    const selectedYear = {{ $year }};
+    const currentMonthIncome =
+        Number(@json($currentMonthIncome ?? 0));
 
+    const currentMonthExpense =
+        Number(@json($currentMonthExpense ?? 0));
 
-    new Chart(ctx, {
 
-        type: 'bar',
+    /*
+    |--------------------------------------------------------------------------
+    | MONTHLY BAR CHART
+    |--------------------------------------------------------------------------
+    */
 
-        data: {
+    const monthlyCanvas =
+        document.getElementById(
+            'monthlyIncomeExpenseChart'
+        );
 
-            labels: months,
 
-            datasets: [
+    let monthlyChart = null;
 
-                {
-                    label: 'Income',
 
-                    data: incomeData,
+    if (monthlyCanvas) {
 
-                    backgroundColor: 'rgba(25, 135, 84, 0.75)',
+        const ctx =
+            monthlyCanvas.getContext('2d');
 
-                    borderColor: '#198754',
 
-                    borderWidth: 1,
+        monthlyChart = new Chart(ctx, {
 
-                    borderRadius: 7,
+            type: 'bar',
 
-                    borderSkipped: false,
+            data: {
 
-                    barPercentage: 0.65,
+                labels: months,
 
-                    categoryPercentage: 0.75
-                },
+                datasets: [
 
-                {
-                    label: 'Expense',
+                    {
+                        label: 'Income',
 
-                    data: expenseData,
+                        data: incomeData,
 
-                    backgroundColor: 'rgba(220, 53, 69, 0.75)',
+                        backgroundColor:
+                            'rgba(25, 135, 84, 0.75)',
 
-                    borderColor: '#dc3545',
+                        borderColor:
+                            '#198754',
 
-                    borderWidth: 1,
+                        borderWidth: 1,
 
-                    borderRadius: 7,
+                        borderRadius: 7,
 
-                    borderSkipped: false,
+                        borderSkipped: false,
 
-                    barPercentage: 0.65,
+                        barPercentage: 0.65,
 
-                    categoryPercentage: 0.75
-                }
-
-            ]
-
-        },
-
-
-        options: {
-
-            responsive: true,
-
-            maintainAspectRatio: false,
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Bar Click
-            |--------------------------------------------------------------------------
-            */
-
-            onClick: function (event, elements) {
-
-                if (!elements.length) {
-                    return;
-                }
-
-                // কোন মাসের bar click হয়েছে
-                const monthIndex = elements[0].index;
-
-                // 01 - 12
-                const monthNumber = String(monthIndex + 1)
-                    .padStart(2, '0');
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | First Date
-                |--------------------------------------------------------------------------
-                */
-
-                const startDate =
-                    `01-${monthNumber}-${selectedYear}`;
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | Last Date
-                |--------------------------------------------------------------------------
-                */
-
-                const lastDay =
-                    new Date(
-                        selectedYear,
-                        monthIndex + 1,
-                        0
-                    ).getDate();
-
-
-                const endDate =
-                    `${String(lastDay).padStart(2, '0')}-${monthNumber}-${selectedYear}`;
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | Income Statement URL
-                |--------------------------------------------------------------------------
-                */
-
-                const url =
-                    `{{ route('admin.income-statement.index') }}` +
-                    `?print=&filter=1&project_id=` +
-                    `&date_range=${encodeURIComponent(startDate + ' to ' + endDate)}`;
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | Go To Report
-                |--------------------------------------------------------------------------
-                */
-
-                window.location.href = url;
-
-            },
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Cursor Pointer
-            |--------------------------------------------------------------------------
-            */
-
-            onHover: function (event, elements) {
-
-                event.native.target.style.cursor =
-                    elements.length ? 'pointer' : 'default';
-
-            },
-
-
-            interaction: {
-
-                mode: 'index',
-
-                intersect: false
-
-            },
-
-
-            plugins: {
-
-                legend: {
-
-                    display: false
-
-                },
-
-
-                tooltip: {
-
-                    backgroundColor: '#1f2937',
-
-                    padding: 12,
-
-                    titleFont: {
-
-                        size: 14,
-
-                        weight: '600'
-
-                    },
-
-                    bodyFont: {
-
-                        size: 13
-
+                        categoryPercentage: 0.75
                     },
 
 
-                    callbacks: {
+                    {
+                        label: 'Expense',
 
-                        label: function (context) {
+                        data: expenseData,
 
-                            let value = context.raw || 0;
+                        backgroundColor:
+                            'rgba(220, 53, 69, 0.75)',
 
-                            return context.dataset.label
-                                + ': '
-                                + value.toLocaleString(undefined, {
+                        borderColor:
+                            '#dc3545',
 
-                                    minimumFractionDigits: 2,
+                        borderWidth: 1,
 
-                                    maximumFractionDigits: 2
+                        borderRadius: 7,
 
-                                });
+                        borderSkipped: false,
 
-                        }
+                        barPercentage: 0.65,
 
+                        categoryPercentage: 0.75
                     }
 
-                }
+                ]
 
             },
 
 
-            scales: {
+            options: {
 
-                x: {
+                responsive: true,
 
-                    grid: {
+                maintainAspectRatio: false,
 
+
+                /*
+                |--------------------------------------------------------------------------
+                | BAR CLICK
+                |--------------------------------------------------------------------------
+                | Bar click করলে Income Statement যাবে
+                |--------------------------------------------------------------------------
+                */
+
+                onClick: function (event, elements) {
+
+                    if (!elements.length) {
+                        return;
+                    }
+
+
+                    const monthIndex =
+                        elements[0].index;
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Clicked Month
+                    |--------------------------------------------------------------------------
+                    */
+
+                    const clickedDate = new Date();
+
+                    clickedDate.setDate(1);
+
+                    clickedDate.setMonth(
+                        clickedDate.getMonth()
+                        - (11 - monthIndex)
+                    );
+
+
+                    const year =
+                        clickedDate.getFullYear();
+
+
+                    const month =
+                        String(
+                            clickedDate.getMonth() + 1
+                        ).padStart(2, '0');
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Start Date
+                    |--------------------------------------------------------------------------
+                    */
+
+                    const startDate =
+                        `01-${month}-${year}`;
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | End Date
+                    |--------------------------------------------------------------------------
+                    */
+
+                    const lastDay =
+                        new Date(
+                            year,
+                            clickedDate.getMonth() + 1,
+                            0
+                        ).getDate();
+
+
+                    const endDate =
+                        `${String(lastDay).padStart(2, '0')}-${month}-${year}`;
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Income Statement
+                    |--------------------------------------------------------------------------
+                    */
+
+                    const url =
+                        `{{ route('admin.income-statement.index') }}` +
+                        `?print=&filter=1&project_id=` +
+                        `&date_range=${encodeURIComponent(
+                            startDate + ' to ' + endDate
+                        )}`;
+
+
+                    window.location.href = url;
+
+                },
+
+
+                onHover: function (event, elements) {
+
+                    event.native.target.style.cursor =
+                        elements.length
+                            ? 'pointer'
+                            : 'default';
+
+                },
+
+
+                interaction: {
+
+                    mode: 'nearest',
+
+                    intersect: true
+
+                },
+
+
+                plugins: {
+
+                    legend: {
                         display: false
-
                     },
 
-                    ticks: {
 
-                        color: '#7b8190',
+                    tooltip: {
 
-                        font: {
+                        backgroundColor: '#1f2937',
 
-                            size: 12
+                        padding: 12,
+
+
+                        callbacks: {
+
+                            label: function (context) {
+
+                                const value =
+                                    context.raw || 0;
+
+
+                                return context.dataset.label
+                                    + ': '
+                                    + Number(value)
+                                        .toLocaleString(
+                                            undefined,
+                                            {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                            }
+                                        );
+
+                            }
 
                         }
 
@@ -744,23 +818,48 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
 
 
-                y: {
+                scales: {
 
-                    beginAtZero: true,
+                    x: {
 
-                    grid: {
+                        grid: {
+                            display: false
+                        },
 
-                        color: 'rgba(0, 0, 0, 0.05)'
+                        ticks: {
+
+                            color: '#7b8190',
+
+                            font: {
+                                size: 12
+                            }
+
+                        }
 
                     },
 
-                    ticks: {
 
-                        color: '#7b8190',
+                    y: {
 
-                        callback: function (value) {
+                        beginAtZero: true,
 
-                            return Number(value).toLocaleString();
+                        grid: {
+
+                            color:
+                                'rgba(0, 0, 0, 0.05)'
+
+                        },
+
+                        ticks: {
+
+                            color: '#7b8190',
+
+                            callback: function (value) {
+
+                                return Number(value)
+                                    .toLocaleString();
+
+                            }
 
                         }
 
@@ -770,9 +869,309 @@ document.addEventListener('DOMContentLoaded', function () {
 
             }
 
-        }
+        });
 
-    });
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CURRENT MONTH PIE CHART
+    |--------------------------------------------------------------------------
+    */
+
+    const currentCanvas =
+        document.getElementById(
+            'currentMonthIncomeExpenseChart'
+        );
+
+
+    let currentMonthChart = null;
+
+
+    if (currentCanvas) {
+
+        const ctx =
+            currentCanvas.getContext('2d');
+
+
+        currentMonthChart = new Chart(ctx, {
+
+            type: 'pie',
+
+            data: {
+
+                labels: [
+                    'Income',
+                    'Expense'
+                ],
+
+                datasets: [
+
+                    {
+                        data: [
+                            currentMonthIncome,
+                            currentMonthExpense
+                        ],
+
+                        backgroundColor: [
+                            'rgba(25, 135, 84, 0.80)',
+                            'rgba(220, 53, 69, 0.80)'
+                        ],
+
+                        borderColor: [
+                            '#198754',
+                            '#dc3545'
+                        ],
+
+                        borderWidth: 2
+                    }
+
+                ]
+
+            },
+
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+
+                plugins: {
+
+                    legend: {
+                        display: false
+                    },
+
+
+                    tooltip: {
+
+                        backgroundColor: '#1f2937',
+
+                        padding: 12,
+
+
+                        callbacks: {
+
+                            label: function (context) {
+
+                                const value =
+                                    context.raw || 0;
+
+
+                                return context.label
+                                    + ': '
+                                    + Number(value)
+                                        .toLocaleString(
+                                            undefined,
+                                            {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                            }
+                                        );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | LAST 12 MONTHS LEGEND CLICK
+    |--------------------------------------------------------------------------
+    */
+
+    document
+        .querySelectorAll('.chart-legend-item')
+        .forEach(function (item) {
+
+            item.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                e.stopPropagation();
+
+
+                if (!monthlyChart) {
+                    return;
+                }
+
+
+                const datasetIndex =
+                    parseInt(
+                        this.getAttribute(
+                            'data-dataset'
+                        )
+                    );
+
+
+                const visible =
+                    monthlyChart.isDatasetVisible(
+                        datasetIndex
+                    );
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Toggle
+                |--------------------------------------------------------------------------
+                */
+
+                monthlyChart.setDatasetVisibility(
+                    datasetIndex,
+                    !visible
+                );
+
+
+                monthlyChart.update();
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Legend Style
+                |--------------------------------------------------------------------------
+                */
+
+                if (visible) {
+
+                    this.classList.add(
+                        'legend-hidden'
+                    );
+
+                } else {
+
+                    this.classList.remove(
+                        'legend-hidden'
+                    );
+
+                }
+
+            });
+
+        });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CURRENT MONTH PIE LEGEND CLICK
+    |--------------------------------------------------------------------------
+    */
+
+    document
+        .querySelectorAll('.current-chart-legend')
+        .forEach(function (item) {
+
+            item.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                e.stopPropagation();
+
+
+                if (!currentMonthChart) {
+                    return;
+                }
+
+
+                const datasetIndex =
+                    parseInt(
+                        this.getAttribute(
+                            'data-dataset'
+                        )
+                    );
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Pie chart uses ONE dataset
+                |--------------------------------------------------------------------------
+                |
+                | তাই dataset visibility নয়,
+                | individual slice hide/show করতে
+                | data value null করতে হবে।
+                |
+                */
+
+                const meta =
+                    currentMonthChart.getDatasetMeta(0);
+
+
+                const element =
+                    meta.data[datasetIndex];
+
+
+                if (!element) {
+                    return;
+                }
+
+
+                const dataset =
+                    currentMonthChart.data.datasets[0];
+
+
+                const originalValue =
+                    datasetIndex === 0
+                        ? currentMonthIncome
+                        : currentMonthExpense;
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Current value
+                |--------------------------------------------------------------------------
+                */
+
+                const currentValue =
+                    dataset.data[datasetIndex];
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Toggle
+                |--------------------------------------------------------------------------
+                */
+
+                if (
+                    currentValue === null ||
+                    currentValue === undefined
+                ) {
+
+                    dataset.data[datasetIndex] =
+                        originalValue;
+
+                    this.classList.remove(
+                        'legend-hidden'
+                    );
+
+                } else {
+
+                    dataset.data[datasetIndex] =
+                        null;
+
+                    this.classList.add(
+                        'legend-hidden'
+                    );
+
+                }
+
+
+                currentMonthChart.update();
+
+            });
+
+        });
 
 });
 
