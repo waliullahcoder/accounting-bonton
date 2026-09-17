@@ -492,45 +492,51 @@
 
 
     {{-- Current Month --}}
-    <div class="card-header bg-white border-0 py-3 mt-3">
+<div class="card-header bg-white border-0 py-3 mt-3">
 
-        <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
 
-            <div>
-                <h5 class="mb-1 fw-bold">
-                    Current Month
-                </h5>
+        <div>
+            <h5 class="mb-1 fw-bold">
+                Current Month
+            </h5>
 
-                <small class="text-muted">
-                    {{ now()->format('F Y') }}
-                </small>
-            </div>
+            <small class="text-muted">
+                {{ now()->format('F Y') }}
+            </small>
+        </div>
 
+    </div>
 
-            <div class="legend-box">
-
-                <div class="legend-item current-chart-legend"
-                     data-dataset="0"
-                     id="currentIncomeLegend">
-
-                    <span class="legend-dot income-dot"></span>
-                    Income
-
-                </div>
+</div>
 
 
-                <div class="legend-item current-chart-legend"
-                     data-dataset="1"
-                     id="currentExpenseLegend">
+<div class="card-body">
 
-                    <span class="legend-dot expense-dot"></span>
-                    Expense
+    <div class="row">
 
-                </div>
+        {{-- Chart --}}
+        <div class="col-lg-7">
 
+            <div style="height: 300px;">
+                <canvas id="currentMonthIncomeExpenseChart"></canvas>
             </div>
 
         </div>
+
+
+        {{-- Legend --}}
+        <div class="col-lg-5">
+
+            <div id="currentMonthChartLegend"
+                 class="current-month-legend">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
     </div>
 
@@ -550,7 +556,7 @@
         @endsection
 
 
-     @push('js')
+  @push('js')
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
@@ -570,11 +576,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const expenseData = @json($expense);
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | CURRENT MONTH TOTAL DATA
+    |--------------------------------------------------------------------------
+    */
+
     const currentMonthIncome =
         Number(@json($currentMonthIncome ?? 0));
 
     const currentMonthExpense =
         Number(@json($currentMonthExpense ?? 0));
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CURRENT MONTH HEAD WISE DATA
+    |--------------------------------------------------------------------------
+    */
+
+    const currentMonthPieData =
+        @json($currentMonthPieData ?? []);
 
 
     /*
@@ -757,6 +780,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
 
 
+                /*
+                |--------------------------------------------------------------------------
+                | BAR HOVER
+                |--------------------------------------------------------------------------
+                */
+
                 onHover: function (event, elements) {
 
                     event.native.target.style.cursor =
@@ -775,6 +804,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 },
 
+
+                /*
+                |--------------------------------------------------------------------------
+                | PLUGINS
+                |--------------------------------------------------------------------------
+                */
 
                 plugins: {
 
@@ -817,6 +852,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 },
 
+
+                /*
+                |--------------------------------------------------------------------------
+                | SCALES
+                |--------------------------------------------------------------------------
+                */
 
                 scales: {
 
@@ -895,36 +936,141 @@ document.addEventListener('DOMContentLoaded', function () {
             currentCanvas.getContext('2d');
 
 
+        /*
+        |--------------------------------------------------------------------------
+        | HEAD WISE LABELS
+        |--------------------------------------------------------------------------
+        */
+
+        const currentMonthLabels =
+            currentMonthPieData.map(function (item) {
+
+                return item.name;
+
+            });
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | HEAD WISE VALUES
+        |--------------------------------------------------------------------------
+        */
+
+        const currentMonthValues =
+            currentMonthPieData.map(function (item) {
+
+                return Number(item.amount || 0);
+
+            });
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | HEAD TYPES
+        |--------------------------------------------------------------------------
+        */
+
+        const currentMonthTypes =
+            currentMonthPieData.map(function (item) {
+
+                return item.type;
+
+            });
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | COLORS
+        |--------------------------------------------------------------------------
+        */
+
+        const incomeColors = [
+
+            '#198754',
+            '#20c997',
+            '#0d6efd',
+            '#6610f2',
+            '#0dcaf0',
+            '#6f42c1',
+            '#146c43',
+            '#087990',
+            '#0a58ca',
+            '#520dc2'
+
+        ];
+
+
+        const expenseColors = [
+
+            '#dc3545',
+            '#fd7e14',
+            '#ffc107',
+            '#d63384',
+            '#6c757d',
+            '#b02a37',
+            '#bb2d3b',
+            '#e35d6a',
+            '#cc9a06',
+            '#984c0c'
+
+        ];
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Generate Head Wise Colors
+        |--------------------------------------------------------------------------
+        */
+
+        const currentMonthColors =
+            currentMonthPieData.map(function (item, index) {
+
+                if (item.type === 'Income') {
+
+                    return incomeColors[
+                        index % incomeColors.length
+                    ];
+
+                }
+
+
+                return expenseColors[
+                    index % expenseColors.length
+                ];
+
+            });
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | PIE CHART
+        |--------------------------------------------------------------------------
+        */
+
         currentMonthChart = new Chart(ctx, {
 
             type: 'pie',
 
             data: {
 
-                labels: [
-                    'Income',
-                    'Expense'
-                ],
+                labels: currentMonthLabels,
 
                 datasets: [
 
                     {
-                        data: [
-                            currentMonthIncome,
-                            currentMonthExpense
-                        ],
 
-                        backgroundColor: [
-                            'rgba(25, 135, 84, 0.80)',
-                            'rgba(220, 53, 69, 0.80)'
-                        ],
+                        data: currentMonthValues,
 
-                        borderColor: [
-                            '#198754',
-                            '#dc3545'
-                        ],
+                        backgroundColor:
+                            currentMonthColors,
 
-                        borderWidth: 2
+                        borderColor:
+                            '#ffffff',
+
+                        borderWidth: 2,
+
+                        hoverOffset: 8
+
                     }
 
                 ]
@@ -937,6 +1083,79 @@ document.addEventListener('DOMContentLoaded', function () {
                 responsive: true,
 
                 maintainAspectRatio: false,
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | PIE CLICK
+                |--------------------------------------------------------------------------
+                */
+
+                onClick: function (event, elements) {
+
+                    if (!elements.length) {
+                        return;
+                    }
+
+
+                    const index =
+                        elements[0].index;
+
+
+                    const legendItem =
+                        document.querySelector(
+                            `.current-chart-legend[data-index="${index}"]`
+                        );
+
+
+                    if (!legendItem) {
+                        return;
+                    }
+
+
+                    const dataset =
+                        currentMonthChart
+                            .data
+                            .datasets[0];
+
+
+                    const currentValue =
+                        dataset.data[index];
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Toggle Slice
+                    |--------------------------------------------------------------------------
+                    */
+
+                    if (
+                        currentValue === null ||
+                        typeof currentValue === 'undefined'
+                    ) {
+
+                        dataset.data[index] =
+                            currentMonthValues[index];
+
+                        legendItem.classList.remove(
+                            'legend-hidden'
+                        );
+
+                    } else {
+
+                        dataset.data[index] =
+                            null;
+
+                        legendItem.classList.add(
+                            'legend-hidden'
+                        );
+
+                    }
+
+
+                    currentMonthChart.update();
+
+                },
 
 
                 plugins: {
@@ -961,7 +1180,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                     context.raw || 0;
 
 
-                                return context.label
+                                const type =
+                                    currentMonthTypes[
+                                        context.dataIndex
+                                    ] || '';
+
+
+                                return type
                                     + ': '
                                     + Number(value)
                                         .toLocaleString(
@@ -983,6 +1208,172 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
         });
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | CURRENT MONTH DYNAMIC LEGEND
+        |--------------------------------------------------------------------------
+        */
+
+        const legendContainer =
+            document.getElementById(
+                'currentMonthChartLegend'
+            );
+
+
+        if (legendContainer) {
+
+            legendContainer.innerHTML = '';
+
+
+            currentMonthPieData.forEach(
+                function (item, index) {
+
+                    const legendItem =
+                        document.createElement('div');
+
+
+                    legendItem.className =
+                        'legend-item current-chart-legend';
+
+
+                    legendItem.setAttribute(
+                        'data-index',
+                        index
+                    );
+
+
+                    legendItem.innerHTML = `
+
+                        <span
+                            class="legend-dot"
+                            style="
+                                background:${currentMonthColors[index]};
+                            "
+                        ></span>
+
+                        <span class="legend-name">
+
+                            ${item.name}
+
+                        </span>
+
+                        <span class="legend-type">
+
+                            ${item.type}
+
+                        </span>
+
+                        <span class="legend-amount">
+
+                            ${Number(item.amount || 0)
+                                .toLocaleString(
+                                    undefined,
+                                    {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }
+                                )}
+
+                        </span>
+
+                    `;
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | LEGEND CLICK
+                    |--------------------------------------------------------------------------
+                    */
+
+                    legendItem.addEventListener(
+                        'click',
+                        function (e) {
+
+                            e.preventDefault();
+
+                            e.stopPropagation();
+
+
+                            if (!currentMonthChart) {
+                                return;
+                            }
+
+
+                            const index =
+                                parseInt(
+                                    this.getAttribute(
+                                        'data-index'
+                                    )
+                                );
+
+
+                            const dataset =
+                                currentMonthChart
+                                    .data
+                                    .datasets[0];
+
+
+                            const currentValue =
+                                dataset.data[index];
+
+
+                            /*
+                            |--------------------------------------------------------------------------
+                            | Hide
+                            |--------------------------------------------------------------------------
+                            */
+
+                            if (
+                                currentValue === null ||
+                                typeof currentValue === 'undefined'
+                            ) {
+
+                                dataset.data[index] =
+                                    currentMonthValues[index];
+
+
+                                this.classList.remove(
+                                    'legend-hidden'
+                                );
+
+                            }
+
+
+                            /*
+                            |--------------------------------------------------------------------------
+                            | Show
+                            |--------------------------------------------------------------------------
+                            */
+
+                            else {
+
+                                dataset.data[index] =
+                                    null;
+
+
+                                this.classList.add(
+                                    'legend-hidden'
+                                );
+
+                            }
+
+
+                            currentMonthChart.update();
+
+                        }
+                    );
+
+
+                    legendContainer.appendChild(
+                        legendItem
+                    );
+
+                }
+            );
+
+        }
 
     }
 
@@ -1067,109 +1458,24 @@ document.addEventListener('DOMContentLoaded', function () {
     |--------------------------------------------------------------------------
     | CURRENT MONTH PIE LEGEND CLICK
     |--------------------------------------------------------------------------
+    |
+    | এই অংশটি dynamic legend-এর জন্য।
+    | তাই এখানে আর data-dataset ব্যবহার হবে না।
+    |
     */
 
     document
         .querySelectorAll('.current-chart-legend')
         .forEach(function (item) {
 
-            item.addEventListener('click', function (e) {
-
-                e.preventDefault();
-
-                e.stopPropagation();
-
-
-                if (!currentMonthChart) {
-                    return;
-                }
-
-
-                const datasetIndex =
-                    parseInt(
-                        this.getAttribute(
-                            'data-dataset'
-                        )
-                    );
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | Pie chart uses ONE dataset
-                |--------------------------------------------------------------------------
-                |
-                | তাই dataset visibility নয়,
-                | individual slice hide/show করতে
-                | data value null করতে হবে।
-                |
-                */
-
-                const meta =
-                    currentMonthChart.getDatasetMeta(0);
-
-
-                const element =
-                    meta.data[datasetIndex];
-
-
-                if (!element) {
-                    return;
-                }
-
-
-                const dataset =
-                    currentMonthChart.data.datasets[0];
-
-
-                const originalValue =
-                    datasetIndex === 0
-                        ? currentMonthIncome
-                        : currentMonthExpense;
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | Current value
-                |--------------------------------------------------------------------------
-                */
-
-                const currentValue =
-                    dataset.data[datasetIndex];
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | Toggle
-                |--------------------------------------------------------------------------
-                */
-
-                if (
-                    currentValue === null ||
-                    currentValue === undefined
-                ) {
-
-                    dataset.data[datasetIndex] =
-                        originalValue;
-
-                    this.classList.remove(
-                        'legend-hidden'
-                    );
-
-                } else {
-
-                    dataset.data[datasetIndex] =
-                        null;
-
-                    this.classList.add(
-                        'legend-hidden'
-                    );
-
-                }
-
-
-                currentMonthChart.update();
-
-            });
+            /*
+            |--------------------------------------------------------------------------
+            | Important
+            |--------------------------------------------------------------------------
+            | Dynamic legend উপরে তৈরি হওয়ার কারণে
+            | এখানে listener পুনরায় না দিলেও কাজ করবে।
+            |
+            */
 
         });
 

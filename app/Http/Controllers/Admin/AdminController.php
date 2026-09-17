@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\HelperClass;
 use App\Models\User;
 use App\Models\AccountTransaction;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
@@ -166,24 +167,85 @@ class AdminController extends Controller
 
 
         /*
-        |--------------------------------------------------------------------------
-        | Current Month
-        |--------------------------------------------------------------------------
-        */
+|--------------------------------------------------------------------------
+| Current Month Head Wise Income
+|--------------------------------------------------------------------------
+*/
 
-        $currentMonthTransaction = $transactions->first(function ($item) {
-            return (int) $item->year === now()->year
-                && (int) $item->month === now()->month;
-        });
+$currentMonthIncomeHeads = AccountTransaction::with('coa')
+    ->whereYear('voucher_date', now()->year)
+    ->whereMonth('voucher_date', now()->month)
+    ->whereHas('coa', function ($query) {
+        $query->where('head_type', 'I');
+    })
+    ->select(
+        'coa_head_code',
+        'coa_setup_id',
+        DB::raw('SUM(credit_amount - debit_amount) as amount')
+    )
+    ->groupBy('coa_setup_id', 'coa_head_code')
+    ->get()
+    ->map(function ($item) {
+        return [
+            'code' => $item->coa_head_code,
+            'name' => $item->coa->head_name
+                ?? $item->coa->name
+                ?? $item->coa_head_code,
+            'amount' => (float) $item->amount,
+            'type' => 'Income',
+        ];
+    })
+    ->filter(function ($item) {
+        return $item['amount'] > 0;
+    })
+    ->values();
 
-        $currentMonthIncome = $currentMonthTransaction
-            ? (float) $currentMonthTransaction->total_income
-            : 0;
 
-        $currentMonthExpense = $currentMonthTransaction
-            ? (float) $currentMonthTransaction->total_expense
-            : 0;
+/*
+|--------------------------------------------------------------------------
+| Current Month Head Wise Expense
+|--------------------------------------------------------------------------
+*/
 
+$currentMonthExpenseHeads = AccountTransaction::with('coa')
+    ->whereYear('voucher_date', now()->year)
+    ->whereMonth('voucher_date', now()->month)
+    ->whereHas('coa', function ($query) {
+        $query->where('head_type', 'E')
+              ->where('transaction', 1);
+    })
+    ->select(
+        'coa_head_code',
+        'coa_setup_id',
+        DB::raw('SUM(debit_amount - credit_amount) as amount')
+    )
+    ->groupBy('coa_setup_id', 'coa_head_code')
+    ->get()
+    ->map(function ($item) {
+        return [
+            'code' => $item->coa_head_code,
+            'name' => $item->coa->head_name
+                ?? $item->coa->name
+                ?? $item->coa_head_code,
+            'amount' => (float) $item->amount,
+            'type' => 'Expense',
+        ];
+    })
+    ->filter(function ($item) {
+        return $item['amount'] > 0;
+    })
+    ->values();
+
+
+/*
+|--------------------------------------------------------------------------
+| Current Month Pie Chart Data
+|--------------------------------------------------------------------------
+*/
+
+$currentMonthPieData = $currentMonthIncomeHeads
+    ->concat($currentMonthExpenseHeads)
+    ->values();
 
         return view('admin.profile.dashbaord', compact(
             'months',
@@ -193,8 +255,9 @@ class AdminController extends Controller
             'totalIncome',
             'totalExpense',
             'netBalance',
-            'currentMonthIncome',
-            'currentMonthExpense'
+            'currentMonthIncomeHeads',
+            'currentMonthExpenseHeads',
+            'currentMonthPieData'
         ));
     }
 
