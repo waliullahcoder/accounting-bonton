@@ -44,27 +44,44 @@ class AdminController extends Controller
         }
     }
 
-    public function dashboard(Request $request)
+   public function dashboard(Request $request)
     {
 
      $year = $request->get('year', now()->year);
 
-        $transactions = AccountTransaction::query()
-            ->whereYear('voucher_date', $year)
-            ->whereIn('voucher_type', ['CV', 'DV'])
-            ->selectRaw('
-                MONTH(voucher_date) as month,
-                voucher_type,
-                SUM(debit_amount) as total_debit,
-                SUM(credit_amount) as total_credit
-            ')
-            ->groupBy(
-                'month',
-                'voucher_type'
-            )
-            ->orderBy('month')
-            ->get();
-
+	$transactions = AccountTransaction::query()
+	    ->withoutGlobalScopes() // ❗ disable all scopes first
+	
+	    ->join('coa_setups', function ($join) {
+	        $join->on('coa_setups.id', '=', 'account_transactions.coa_setup_id')
+	             ->whereNull('coa_setups.deleted_at');
+	    })
+	
+	    ->whereYear('account_transactions.voucher_date', $year)
+	
+	    // ✅ apply company filter ONLY once (explicit)
+	    // ->where('account_transactions.company_id', auth()->user()->company_id)
+	    ->whereNull('account_transactions.deleted_at')
+	
+	    ->selectRaw('
+	        MONTH(account_transactions.voucher_date) as month,
+	
+	        SUM(CASE 
+	            WHEN coa_setups.head_type = "I" 
+	            THEN account_transactions.credit_amount 
+	            ELSE 0 
+	        END) as total_income,
+	
+	        SUM(CASE 
+	            WHEN coa_setups.head_type = "E" 
+	            THEN account_transactions.debit_amount 
+	            ELSE 0 
+	        END) as total_expense
+	    ')
+	    ->groupByRaw('MONTH(account_transactions.voucher_date)')
+	    ->orderByRaw('MONTH(account_transactions.voucher_date)')
+	    ->get();
+		
         $months = [
             'January',
             'February',
@@ -80,23 +97,15 @@ class AdminController extends Controller
             'December'
         ];
 
-        $income = array_fill(0, 12, 0);
-        $expense = array_fill(0, 12, 0);
-
-        foreach ($transactions as $transaction) {
-
-            $index = $transaction->month - 1;
-
-            // CV = Income
-            if ($transaction->voucher_type === 'CV') {
-                $income[$index] += (float) $transaction->total_credit;
-            }
-
-            // DV = Expense
-            if ($transaction->voucher_type === 'DV') {
-                $expense[$index] += (float) $transaction->total_debit;
-            }
-        }
+		$income = array_fill(0, 12, 0);
+		$expense = array_fill(0, 12, 0);
+		
+		foreach ($transactions as $t) {
+		    $index = $t->month - 1;
+		
+		    $income[$index] = (float) $t->total_income;
+		    $expense[$index] = (float) $t->total_expense;
+		}
 
         $totalIncome = array_sum($income);
         $totalExpense = array_sum($expense);

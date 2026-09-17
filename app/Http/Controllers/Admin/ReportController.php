@@ -379,11 +379,19 @@ class ReportController extends Controller
         $coa_ids = CoaSetup::where('parent_id', $request->id)->pluck('id')->toArray();
         $child_coa_ids = CoaSetup::whereIn('parent_id', $coa_ids)->pluck('id')->toArray();
         $coa_ids = array_merge($coa_ids, $child_coa_ids);
-        $data = AccountTransaction::with('coa')->select('*', DB::raw('SUM(debit_amount) as debit_amount'), DB::raw('SUM(credit_amount) as credit_amount'))
+        
+        $data = AccountTransaction::with('coa')
+            ->select(
+                'coa_setup_id',
+                DB::raw('SUM(debit_amount) as debit_amount'),
+                DB::raw('SUM(credit_amount) as credit_amount')
+            )
             ->whereIn('coa_setup_id', $coa_ids)
             ->groupBy('coa_setup_id')
             ->get();
 
+            
+            // dd($data);
         if ($request->has('print')) {
             $report_title = 'Head Transactions Details';
             $pdf = Pdf::loadView('admin.reports.balance_sheet.details_print', compact('report_title', 'data'));

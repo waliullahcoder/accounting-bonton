@@ -7,7 +7,7 @@
                 <h6 class="h6 mb-0 text-uppercase py-1">
                     {{ isset($title) ? $title : 'Please Set Title' }}
                 </h6>
-                <form method="get" action="{{ Route('admin.head-details.index') }}">
+                <form method="get" action="{{ Route('admin.balance-sheet-head-details.index') }}">
                     <input type="hidden" name="id" value="{{ request('id') }}">
                     <input type="hidden" name="details_print" value="1">
                     <button type="submit" class="btn btn-sm btn-primary" name="print" value="print">Print</button>
@@ -36,7 +36,7 @@
                                 <tr>
                                     <td class="text-center" width="30">{{ $loop->iteration }}</td>
                                     <td>
-                                        <a href="{{ Route('admin.head-details.index') }}?coa_setup_id={{ $row->coa_setup_id }}&balance_sheet=1"
+                                        <a href="{{ Route('admin.balance-sheet-head-details.index') }}?coa_setup_id={{ $row->coa_setup_id }}&balance_sheet=1"
                                             target="_blank">
                                             {{ @$row->coa->head_name }}
                                         </a>
