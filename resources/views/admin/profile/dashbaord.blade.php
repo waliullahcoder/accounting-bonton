@@ -541,17 +541,7 @@
     </div>
 
 
-    <div class="card-body">
-
-        <div style="height: 300px;">
-
-            <canvas id="currentMonthIncomeExpenseChart"></canvas>
-
-        </div>
-
-    </div>
-
-</div>
+    
 
         @endsection
 
